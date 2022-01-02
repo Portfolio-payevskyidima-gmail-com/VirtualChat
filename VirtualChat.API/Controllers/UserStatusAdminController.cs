@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VirtualChat.Core.DTOs.UserStatusDTO;
-using VirtualChat.Services.AdminService;
+using VirtualChat.Services.Services.UserStatusAdminService;
 
 namespace VirtualChat.API.Controllers;
 
 /// <summary>
 /// User Status Admin Controller
 /// </summary>
-[Route("api/[controller]")]
+[Route("virtualChatAPI/[controller]")]
 [ApiController]
 public class UserStatusAdminController : ControllerBase
 {
@@ -31,7 +31,7 @@ public class UserStatusAdminController : ControllerBase
     [HttpGet(nameof(GetUserStatus))]
     public IActionResult GetUserStatus(int? id)
     {
-        UserStatusDTO status = null;
+        UserStatusDTO status;
         try
         {
             status = _userStatusAdminService.GetUserStatus(id);
@@ -50,7 +50,7 @@ public class UserStatusAdminController : ControllerBase
     [HttpGet(nameof(GetAllUsersStatus))]
     public IActionResult GetAllUsersStatus()
     {
-        IEnumerable<UserStatusDTO> statuses = null;
+        IEnumerable<UserStatusDTO> statuses;
         try
         {
             statuses = _userStatusAdminService.GetAllUserStatuses();

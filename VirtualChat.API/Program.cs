@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using VirtualChat.Repository;
 using VirtualChat.Repository.Repository;
-using VirtualChat.Services.AdminService;
+using VirtualChat.Services.Services.UserStatusAdminService;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,6 @@
-﻿using VirtualChat.Domain.Models;
-using VirtualChat.Core.DTOs.UserStatusDTO;
+﻿using VirtualChat.Core.DTOs.UserStatusDTO;
 
-namespace VirtualChat.Services.AdminService;
+namespace VirtualChat.Services.Services.UserStatusAdminService;
 
 /// <summary>
 /// Adminitration service

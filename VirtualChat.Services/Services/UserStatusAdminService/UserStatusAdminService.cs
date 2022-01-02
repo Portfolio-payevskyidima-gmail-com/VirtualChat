@@ -1,9 +1,9 @@
 ﻿using VirtualChat.Core.DTOs.UserStatusDTO;
 using VirtualChat.Domain.Models;
 using VirtualChat.Repository.Repository;
-using VirtualChat.Services.DTOTranslaters;
+using VirtualChat.Services.DTOTranslators;
 
-namespace VirtualChat.Services.AdminService;
+namespace VirtualChat.Services.Services.UserStatusAdminService;
 
 public class UserStatusAdminService : IUserStatusAdminService
 {
@@ -22,7 +22,7 @@ public class UserStatusAdminService : IUserStatusAdminService
     public void CreateUserStatus(BaseUserStatusDTO status)
     {
         CheckNull(status);
-        IUserStatusTranslater translater = new UserStatusTranslater(status);
+        IUserStatusTranslator translater = new UserStatusTranslator(status);
         UserStatus userStatus = translater.GetEntity();
         _userStatus.Create(userStatus);
         _userStatus.SaveChanges();
@@ -42,7 +42,7 @@ public class UserStatusAdminService : IUserStatusAdminService
         if (id == null) throw new ArgumentNullException("id");
         UserStatus status = _userStatus.Get(id.Value);
         CheckNull(status);
-        IUserStatusTranslater translater = new UserStatusTranslater(status);
+        IUserStatusTranslator translater = new UserStatusTranslator(status);
         UserStatusDTO userStatus = translater.GetDTO();
         return userStatus;
     }
@@ -50,7 +50,7 @@ public class UserStatusAdminService : IUserStatusAdminService
     public void UpdateUserStatus(UserStatusDTO status)
     {
         CheckNull(status);
-        IUserStatusTranslater translater = new UserStatusTranslater(status);
+        IUserStatusTranslator translater = new UserStatusTranslator(status);
         UserStatus userStatus = translater.GetEntity();
         _userStatus.Update(userStatus);
         _userStatus.SaveChanges();
@@ -60,10 +60,10 @@ public class UserStatusAdminService : IUserStatusAdminService
     {
         IList<UserStatusDTO> userStatusDTOs = new List<UserStatusDTO>();
         IEnumerable<UserStatus> userStatuses = _userStatus.GetAll();
-        IUserStatusTranslater translater = null;
+        IUserStatusTranslator translater;
         foreach(var item in userStatuses)
         {
-            translater = new UserStatusTranslater(item);
+            translater = new UserStatusTranslator(item);
             UserStatusDTO userStatusDTO = translater.GetDTO();
             userStatusDTOs.Add(userStatusDTO);
         }

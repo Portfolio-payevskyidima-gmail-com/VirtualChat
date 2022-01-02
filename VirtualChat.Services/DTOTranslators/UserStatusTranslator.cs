@@ -1,12 +1,12 @@
 ﻿using VirtualChat.Domain.Models;
 using VirtualChat.Core.DTOs.UserStatusDTO;
 
-namespace VirtualChat.Services.DTOTranslaters;
+namespace VirtualChat.Services.DTOTranslators;
 
 /// <summary>
 /// User status translator from DTO to entity and from entity to DTO
 /// </summary>
-public class UserStatusTranslater : IUserStatusTranslater
+public class UserStatusTranslator : IUserStatusTranslator
 {
     #region Properties
     private UserStatus _userStatusEntity;
@@ -15,7 +15,7 @@ public class UserStatusTranslater : IUserStatusTranslater
     #endregion
 
     #region Constructors
-    public UserStatusTranslater(UserStatus entity)
+    public UserStatusTranslator(UserStatus entity)
     {
         _userStatusEntity = entity;
         _userStatusDTO = new UserStatusDTO
@@ -29,7 +29,7 @@ public class UserStatusTranslater : IUserStatusTranslater
         };
     }
 
-    public UserStatusTranslater(UserStatusDTO DTO)
+    public UserStatusTranslator(UserStatusDTO DTO)
     {
         _userStatusDTO = DTO;
         _userStatusEntity = new UserStatus
@@ -43,7 +43,7 @@ public class UserStatusTranslater : IUserStatusTranslater
         };
     }
 
-    public UserStatusTranslater(BaseUserStatusDTO baseDTO)
+    public UserStatusTranslator(BaseUserStatusDTO baseDTO)
     {
         _baseUserStatusDTO = baseDTO;
         _userStatusDTO = new UserStatusDTO
