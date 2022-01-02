@@ -76,7 +76,7 @@ public class UserStatusAdminService : IUserStatusAdminService
     {
         if (status == null)
         {
-            throw new NullReferenceException("status");
+            throw new NullReferenceException("status is null");
         }
     }
     #endregion
