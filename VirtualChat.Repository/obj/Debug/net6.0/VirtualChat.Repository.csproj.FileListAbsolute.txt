@@ -1,0 +1,15 @@
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\obj\Debug\net6.0\VirtualChat.Repository.csproj.AssemblyReference.cache
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\obj\Debug\net6.0\VirtualChat.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\obj\Debug\net6.0\VirtualChat.Repository.AssemblyInfoInputs.cache
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\obj\Debug\net6.0\VirtualChat.Repository.AssemblyInfo.cs
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\obj\Debug\net6.0\VirtualChat.Repository.csproj.CoreCompileInputs.cache
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\bin\Debug\net6.0\VirtualChat.Repository.deps.json
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\bin\Debug\net6.0\VirtualChat.Repository.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\bin\Debug\net6.0\ref\VirtualChat.Repository.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\bin\Debug\net6.0\VirtualChat.Repository.pdb
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\bin\Debug\net6.0\VirtualChat.Domain.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\bin\Debug\net6.0\VirtualChat.Domain.pdb
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\obj\Debug\net6.0\VirtualChat.Repository.csproj.CopyComplete
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\obj\Debug\net6.0\VirtualChat.Repository.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\obj\Debug\net6.0\ref\VirtualChat.Repository.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Repository\obj\Debug\net6.0\VirtualChat.Repository.pdb

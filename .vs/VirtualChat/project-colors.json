@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c9a353ed-f66e-4f13-a89d-03c236e00c3c": {
+      "ProjectGuid": "c9a353ed-f66e-4f13-a89d-03c236e00c3c",
+      "DisplayName": "VirtualChat.Domain",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "0a92199d-4080-4958-8565-ae073e102eeb": {
+      "ProjectGuid": "0a92199d-4080-4958-8565-ae073e102eeb",
+      "DisplayName": "VirtualChat.Repository",
+      "ColorIndex": 1
+    },
+    "cd077490-fcda-4d77-b56c-32cb237d9347": {
+      "ProjectGuid": "cd077490-fcda-4d77-b56c-32cb237d9347",
+      "DisplayName": "VirtualChat.API",
+      "ColorIndex": 2
+    },
+    "e28e78ad-0a41-4c16-a561-8eef6d7dcdf2": {
+      "ProjectGuid": "e28e78ad-0a41-4c16-a561-8eef6d7dcdf2",
+      "DisplayName": "VirtualChat.API",
+      "ColorIndex": 3
+    },
+    "f198f11f-0a9a-4163-b8a9-c15ddb85e9fd": {
+      "ProjectGuid": "f198f11f-0a9a-4163-b8a9-c15ddb85e9fd",
+      "DisplayName": "VirtualChat.Services",
+      "ColorIndex": 4
+    },
+    "efc258e2-9313-49e9-bcb8-86acda6b10b7": {
+      "ProjectGuid": "efc258e2-9313-49e9-bcb8-86acda6b10b7",
+      "DisplayName": "VirtualChat.Domain",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}
