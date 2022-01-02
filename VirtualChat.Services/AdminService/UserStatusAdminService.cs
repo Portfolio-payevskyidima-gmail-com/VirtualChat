@@ -1,5 +1,7 @@
-﻿using VirtualChat.Domain.Models;
+﻿using VirtualChat.Core.DTOs.UserStatusDTO;
+using VirtualChat.Domain.Models;
 using VirtualChat.Repository.Repository;
+using VirtualChat.Services.DTOTranslaters;
 
 namespace VirtualChat.Services.AdminService;
 
@@ -17,10 +19,12 @@ public class UserStatusAdminService : IUserStatusAdminService
     #endregion
 
     #region Methods
-    public void CreateUserStatus(UserStatus status)
+    public void CreateUserStatus(BaseUserStatusDTO status)
     {
-        UserStatusCheckNull(status);
-        _userStatus.Create(status);
+        CheckNull(status);
+        IUserStatusTranslater translater = new UserStatusTranslater(status);
+        UserStatus userStatus = translater.GetEntity();
+        _userStatus.Create(userStatus);
         _userStatus.SaveChanges();
     }
 
@@ -28,34 +32,47 @@ public class UserStatusAdminService : IUserStatusAdminService
     {
         if (id == null) throw new ArgumentNullException("id");
         UserStatus status = _userStatus.Get(id.Value);
-        UserStatusCheckNull(status);
+        CheckNull(status);
         _userStatus.Delete(status.Id);
         _userStatus.SaveChanges();
     }
 
-    public UserStatus GetUserStatus(int? id)
+    public UserStatusDTO GetUserStatus(int? id)
     {
         if (id == null) throw new ArgumentNullException("id");
         UserStatus status = _userStatus.Get(id.Value);
-        UserStatusCheckNull(status);
-        return status;
+        CheckNull(status);
+        IUserStatusTranslater translater = new UserStatusTranslater(status);
+        UserStatusDTO userStatus = translater.GetDTO();
+        return userStatus;
     }
 
-    public void UpdateUserStatus(UserStatus status)
+    public void UpdateUserStatus(UserStatusDTO status)
     {
-        UserStatusCheckNull(status);
-        _userStatus.Update(status);
+        CheckNull(status);
+        IUserStatusTranslater translater = new UserStatusTranslater(status);
+        UserStatus userStatus = translater.GetEntity();
+        _userStatus.Update(userStatus);
         _userStatus.SaveChanges();
     }
 
-    public IEnumerable<UserStatus> GetAllUserStatuses()
+    public IEnumerable<UserStatusDTO> GetAllUserStatuses()
     {
-        return _userStatus.GetAll();
+        IList<UserStatusDTO> userStatusDTOs = new List<UserStatusDTO>();
+        IEnumerable<UserStatus> userStatuses = _userStatus.GetAll();
+        IUserStatusTranslater translater = null;
+        foreach(var item in userStatuses)
+        {
+            translater = new UserStatusTranslater(item);
+            UserStatusDTO userStatusDTO = translater.GetDTO();
+            userStatusDTOs.Add(userStatusDTO);
+        }
+        return userStatusDTOs;
     }
     #endregion
 
     #region Private methods
-    private void UserStatusCheckNull(UserStatus status)
+    private void CheckNull(object status)
     {
         if (status == null)
         {

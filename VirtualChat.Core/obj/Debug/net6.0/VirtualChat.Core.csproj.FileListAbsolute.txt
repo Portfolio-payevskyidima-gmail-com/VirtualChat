@@ -1,0 +1,12 @@
+D:\Projects\C#\VirtualChat\VirtualChat.Core\bin\Debug\net6.0\VirtualChat.Core.deps.json
+D:\Projects\C#\VirtualChat\VirtualChat.Core\bin\Debug\net6.0\VirtualChat.Core.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Core\bin\Debug\net6.0\ref\VirtualChat.Core.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Core\bin\Debug\net6.0\VirtualChat.Core.pdb
+D:\Projects\C#\VirtualChat\VirtualChat.Core\obj\Debug\net6.0\VirtualChat.Core.csproj.AssemblyReference.cache
+D:\Projects\C#\VirtualChat\VirtualChat.Core\obj\Debug\net6.0\VirtualChat.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\C#\VirtualChat\VirtualChat.Core\obj\Debug\net6.0\VirtualChat.Core.AssemblyInfoInputs.cache
+D:\Projects\C#\VirtualChat\VirtualChat.Core\obj\Debug\net6.0\VirtualChat.Core.AssemblyInfo.cs
+D:\Projects\C#\VirtualChat\VirtualChat.Core\obj\Debug\net6.0\VirtualChat.Core.csproj.CoreCompileInputs.cache
+D:\Projects\C#\VirtualChat\VirtualChat.Core\obj\Debug\net6.0\VirtualChat.Core.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Core\obj\Debug\net6.0\ref\VirtualChat.Core.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Core\obj\Debug\net6.0\VirtualChat.Core.pdb

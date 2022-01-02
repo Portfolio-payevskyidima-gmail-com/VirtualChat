@@ -64,3 +64,5 @@ D:\Projects\C#\VirtualChat\VirtualChat.API\obj\Debug\net6.0\VirtualChat.API.pdb
 D:\Projects\C#\VirtualChat\VirtualChat.API\obj\Debug\net6.0\VirtualChat.API.genruntimeconfig.cache
 D:\Projects\C#\VirtualChat\VirtualChat.API\bin\Debug\net6.0\Humanizer.dll
 D:\Projects\C#\VirtualChat\VirtualChat.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Projects\C#\VirtualChat\VirtualChat.API\bin\Debug\net6.0\VirtualChat.Core.dll
+D:\Projects\C#\VirtualChat\VirtualChat.API\bin\Debug\net6.0\VirtualChat.Core.pdb

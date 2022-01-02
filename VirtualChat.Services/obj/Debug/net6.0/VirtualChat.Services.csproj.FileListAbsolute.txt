@@ -15,3 +15,5 @@ D:\Projects\C#\VirtualChat\VirtualChat.Services\obj\Debug\net6.0\VirtualChat.Ser
 D:\Projects\C#\VirtualChat\VirtualChat.Services\obj\Debug\net6.0\VirtualChat.Services.dll
 D:\Projects\C#\VirtualChat\VirtualChat.Services\obj\Debug\net6.0\ref\VirtualChat.Services.dll
 D:\Projects\C#\VirtualChat\VirtualChat.Services\obj\Debug\net6.0\VirtualChat.Services.pdb
+D:\Projects\C#\VirtualChat\VirtualChat.Services\bin\Debug\net6.0\VirtualChat.Core.dll
+D:\Projects\C#\VirtualChat\VirtualChat.Services\bin\Debug\net6.0\VirtualChat.Core.pdb

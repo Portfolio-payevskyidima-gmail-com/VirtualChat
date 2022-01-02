@@ -1,5 +1,5 @@
 ﻿using VirtualChat.Domain.Models;
-using VirtualChat.Services.DTOs.UserStatusDTO;
+using VirtualChat.Core.DTOs.UserStatusDTO;
 
 namespace VirtualChat.Services.AdminService;
 

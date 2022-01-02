@@ -9,35 +9,48 @@ namespace VirtualChat.Services.DTOTranslaters;
 public class UserStatusTranslater : IUserStatusTranslater
 {
     #region Properties
-    private UserStatus UserStatusEntity;
-    private UserStatusDTO UserStatusDTO;
+    private UserStatus _userStatusEntity;
+    private UserStatusDTO _userStatusDTO;
+    private BaseUserStatusDTO _baseUserStatusDTO;
     #endregion
 
     #region Constructors
     public UserStatusTranslater(UserStatus entity)
     {
-        UserStatusEntity = entity;
-        UserStatusDTO = new UserStatusDTO
+        _userStatusEntity = entity;
+        _userStatusDTO = new UserStatusDTO
         {
             Id = entity.Id,
+            Name = entity.Name
+        };
+        _baseUserStatusDTO = new BaseUserStatusDTO
+        {
             Name = entity.Name
         };
     }
 
     public UserStatusTranslater(UserStatusDTO DTO)
     {
-        UserStatusDTO = DTO;
-        UserStatusEntity = new UserStatus
+        _userStatusDTO = DTO;
+        _userStatusEntity = new UserStatus
         {
             Id = DTO.Id,
+            Name = DTO.Name
+        };
+        _baseUserStatusDTO = new BaseUserStatusDTO
+        {
             Name = DTO.Name
         };
     }
 
     public UserStatusTranslater(BaseUserStatusDTO baseDTO)
     {
-        UserStatusDTO = (UserStatusDTO)baseDTO;
-        UserStatusEntity = new UserStatus
+        _baseUserStatusDTO = baseDTO;
+        _userStatusDTO = new UserStatusDTO
+        {
+            Name = baseDTO.Name
+        };
+        _userStatusEntity = new UserStatus
         {
             Name = baseDTO.Name
         };
@@ -47,18 +60,18 @@ public class UserStatusTranslater : IUserStatusTranslater
     #region Public Methods
     public UserStatusDTO GetDTO()
     {
-        if (UserStatusDTO == null) throw new NullReferenceException(nameof(UserStatusEntity));
-        return UserStatusDTO;
+        if (_userStatusDTO == null) throw new NullReferenceException(nameof(_userStatusEntity));
+        return _userStatusDTO;
     }
     public BaseUserStatusDTO GetBaseDTO()
     {
-        if (UserStatusDTO == null) throw new NullReferenceException(nameof(UserStatusEntity));
-        return (BaseUserStatusDTO)UserStatusDTO;
+        if (_userStatusDTO == null) throw new NullReferenceException(nameof(_userStatusEntity));
+        return _baseUserStatusDTO;
     }
     public UserStatus GetEntity()
     {
-        if (UserStatusEntity == null) throw new NullReferenceException(nameof(UserStatusEntity));
-        return UserStatusEntity;
+        if (_userStatusEntity == null) throw new NullReferenceException(nameof(_userStatusEntity));
+        return _userStatusEntity;
     }
     #endregion
 }
