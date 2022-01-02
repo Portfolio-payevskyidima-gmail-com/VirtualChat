@@ -35,7 +35,12 @@
       "ProjectGuid": "efc258e2-9313-49e9-bcb8-86acda6b10b7",
       "DisplayName": "VirtualChat.Domain",
       "ColorIndex": 5
+    },
+    "d3a77aa9-cdd1-415f-b824-94c7f6eefe09": {
+      "ProjectGuid": "d3a77aa9-cdd1-415f-b824-94c7f6eefe09",
+      "DisplayName": "VirtualChat.Core",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }
