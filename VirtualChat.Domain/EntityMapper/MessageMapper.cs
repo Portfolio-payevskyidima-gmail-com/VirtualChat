@@ -25,7 +25,7 @@ public class MessageMapper : IEntityTypeConfiguration<Message>
         // Properties
         builder.Property(x => x.Id)
             .HasColumnName(@"id")
-            .HasColumnType("INT")
+            .HasColumnType("NVARCHAR(36)")
             .IsRequired();
 
         builder.Property(x => x.Text)

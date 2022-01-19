@@ -6,7 +6,7 @@
 public class ContactStatus
 {
     // Main properties
-    public int Id { get; set; }
+    public string Id { get; set; }
     public string Name { get; set; }
 
     // Many-Collections for Foreign keys

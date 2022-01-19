@@ -24,23 +24,24 @@ public class UserStatusAdminService : IUserStatusAdminService
         CheckNull(status);
         IUserStatusTranslator translater = new UserStatusTranslator(status);
         UserStatus userStatus = translater.GetEntity();
+        userStatus.Id = GeneratorStringId.GetNewStringId();
         _userStatus.Create(userStatus);
         _userStatus.SaveChanges();
     }
 
-    public void DeleteUserStatus(int? id)
+    public void DeleteUserStatus(string id)
     {
         if (id == null) throw new ArgumentNullException("id");
-        UserStatus status = _userStatus.Get(id.Value);
+        UserStatus status = _userStatus.Get(id);
         CheckNull(status);
         _userStatus.Delete(status.Id);
         _userStatus.SaveChanges();
     }
 
-    public UserStatusDTO GetUserStatus(int? id)
+    public UserStatusDTO GetUserStatus(string id)
     {
         if (id == null) throw new ArgumentNullException("id");
-        UserStatus status = _userStatus.Get(id.Value);
+        UserStatus status = _userStatus.Get(id);
         CheckNull(status);
         IUserStatusTranslator translater = new UserStatusTranslator(status);
         UserStatusDTO userStatus = translater.GetDTO();

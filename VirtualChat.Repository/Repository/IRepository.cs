@@ -13,7 +13,7 @@ public interface IRepository<T> where T : class
     /// </summary>
     /// <param name="id">Id of T</param>
     /// <returns>T entity</returns>
-    T Get(int id);
+    T Get(string id);
     /// <summary>
     /// Get all T entities
     /// </summary>
@@ -24,7 +24,7 @@ public interface IRepository<T> where T : class
     /// </summary>
     /// <param name="id">id of T</param>
     /// <exception cref="ArgumentNullException">Entity with current id does not exist</exception>
-    void Delete(int id);
+    void Delete(string id);
     /// <summary>
     /// Update T entity in database
     /// </summary>

@@ -6,12 +6,12 @@
 public class ChatMessage
 {
     // Main properties
-    public int Id { get; set; }
+    public string Id { get; set; }
 
     // Foreign key references
-    public int ChatId { get; set; }
+    public string ChatId { get; set; }
     public Chat Chat { get; set; }
 
-    public int MessageId { get; set; }
+    public string MessageId { get; set; }
     public Message Message { get; set; }
 }

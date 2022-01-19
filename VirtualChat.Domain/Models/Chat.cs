@@ -6,15 +6,15 @@
 public class Chat
 {
     // Main properties
-    public int Id { get; set; }
+    public string Id { get; set; }
     public string Name { get; set; }
     public DateTime CreatedDate { get; set; }
 
     // Foreign key references
-    public int UserId { get; set; }
+    public string UserId { get; set; }
     public User User { get; set; }
 
-    public int CompanionUserId { get; set; }
+    public string CompanionUserId { get; set; }
     public User CompanionUser { get; set; }
 
 

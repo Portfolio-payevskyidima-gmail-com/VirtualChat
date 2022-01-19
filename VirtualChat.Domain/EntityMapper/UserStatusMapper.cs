@@ -24,7 +24,7 @@ public class UserStatusMapper : IEntityTypeConfiguration<UserStatus>
         // Properties
         builder.Property(x => x.Id)
             .HasColumnName(@"id")
-            .HasColumnType("INT")
+            .HasColumnType("NVARCHAR(36)")
             .IsRequired();
 
         builder.Property(x => x.Name)

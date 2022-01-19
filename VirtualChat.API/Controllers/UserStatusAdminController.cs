@@ -29,7 +29,7 @@ public class UserStatusAdminController : ControllerBase
     /// <param name="id">Id of user status</param>
     /// <returns>JSON UserStatusDTO</returns>
     [HttpGet(nameof(GetUserStatus))]
-    public IActionResult GetUserStatus(int? id)
+    public IActionResult GetUserStatus(string id)
     {
         UserStatusDTO status;
         try
@@ -76,7 +76,8 @@ public class UserStatusAdminController : ControllerBase
         }
         catch (Exception e)
         {
-            return BadRequest($"ERROR: {e.Message}");
+            throw e;
+            //return BadRequest($"ERROR: {e.Message}");
         }
         return Ok();
     }
@@ -87,7 +88,7 @@ public class UserStatusAdminController : ControllerBase
     /// <param name="id">Id of deleting UserStatus</param>
     /// <returns></returns>
     [HttpDelete(nameof(DeleteUserStatus))]
-    public IActionResult DeleteUserStatus(int? id)
+    public IActionResult DeleteUserStatus(string id)
     {
         try
         {

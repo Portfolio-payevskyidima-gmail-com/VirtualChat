@@ -20,7 +20,17 @@ public class ChatMessageMapper : IEntityTypeConfiguration<ChatMessage>
         // Properties
         builder.Property(x => x.Id)
             .HasColumnName(@"id")
-            .HasColumnType("INT")
+            .HasColumnType("NVARCHAR(36)")
+            .IsRequired();
+
+        builder.Property(x => x.ChatId)
+            .HasColumnName(@"chat_id")
+            .HasColumnType("NVARCHAR(36)")
+            .IsRequired();
+
+        builder.Property(x => x.MessageId)
+            .HasColumnName(@"message_id")
+            .HasColumnType("NVARCHAR(36)")
             .IsRequired();
     }
 }

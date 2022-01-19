@@ -21,13 +21,13 @@ public interface IUserStatusAdminService
     /// Delete existig users status
     /// </summary>
     /// <param name="status">User status</param>
-    void DeleteUserStatus(int? id);
+    void DeleteUserStatus(string id);
     /// <summary>
     /// Get UserStatus by Id
     /// </summary>
     /// <param name="id">UserStatus Id</param>
     /// <returns>UserStatus</returns>
-    UserStatusDTO GetUserStatus(int? id);
+    UserStatusDTO GetUserStatus(string id);
     /// <summary>
     /// Get all UserStatuses
     /// </summary>

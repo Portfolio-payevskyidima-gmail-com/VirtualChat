@@ -12,8 +12,8 @@ using VirtualChat.Repository;
 namespace VirtualChat.Repository.Migrations
 {
     [DbContext(typeof(VirtalChatDbContext))]
-    [Migration("20220101205657_migration_1")]
-    partial class migration_1
+    [Migration("20220119145938_string-pk1")]
+    partial class stringpk1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,15 +26,13 @@ namespace VirtualChat.Repository.Migrations
 
             modelBuilder.Entity("VirtualChat.Domain.Models.Chat", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
+                    b.Property<string>("Id")
+                        .HasColumnType("NVARCHAR")
                         .HasColumnName("id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CompanionUserId")
-                        .HasColumnType("INT");
+                    b.Property<string>("CompanionUserId")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("DATETIME")
@@ -45,8 +43,9 @@ namespace VirtualChat.Repository.Migrations
                         .HasColumnType("NVARCHAR(32)")
                         .HasColumnName("name");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INT");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR");
 
                     b.HasKey("Id")
                         .HasName("pk_chatid");
@@ -60,18 +59,17 @@ namespace VirtualChat.Repository.Migrations
 
             modelBuilder.Entity("VirtualChat.Domain.Models.ChatMessage", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
+                    b.Property<string>("Id")
+                        .HasColumnType("NVARCHAR")
                         .HasColumnName("id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<string>("ChatId")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR");
 
-                    b.Property<int>("ChatId")
-                        .HasColumnType("INT");
-
-                    b.Property<int>("MessageId")
-                        .HasColumnType("INT");
+                    b.Property<string>("MessageId")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR");
 
                     b.HasKey("Id")
                         .HasName("pk_chatmessageid");
@@ -85,26 +83,26 @@ namespace VirtualChat.Repository.Migrations
 
             modelBuilder.Entity("VirtualChat.Domain.Models.Contact", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
+                    b.Property<string>("Id")
+                        .HasColumnType("NVARCHAR")
                         .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ContactName")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(32)")
                         .HasColumnName("contact_name");
 
-                    b.Property<int>("ContactUserId")
-                        .HasColumnType("INT");
+                    b.Property<string>("ContactUserId")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR");
 
-                    b.Property<int>("StatusId")
-                        .HasColumnType("INT");
+                    b.Property<string>("StatusId")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INT");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR");
 
                     b.HasKey("Id")
                         .HasName("pk_contactid");
@@ -120,12 +118,9 @@ namespace VirtualChat.Repository.Migrations
 
             modelBuilder.Entity("VirtualChat.Domain.Models.ContactStatus", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
+                    b.Property<string>("Id")
+                        .HasColumnType("NVARCHAR")
                         .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -140,12 +135,9 @@ namespace VirtualChat.Repository.Migrations
 
             modelBuilder.Entity("VirtualChat.Domain.Models.Message", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
+                    b.Property<string>("Id")
+                        .HasColumnType("NVARCHAR")
                         .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("DATETIME")
@@ -164,12 +156,10 @@ namespace VirtualChat.Repository.Migrations
 
             modelBuilder.Entity("VirtualChat.Domain.Models.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
+                        .HasColumnType("NVARCHAR")
                         .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("DATETIME")
@@ -208,8 +198,8 @@ namespace VirtualChat.Repository.Migrations
                         .HasColumnType("NVARCHAR(12)")
                         .HasColumnName("phone_number");
 
-                    b.Property<int?>("StatusId")
-                        .HasColumnType("INT")
+                    b.Property<string>("StatusId")
+                        .HasColumnType("NVARCHAR(36)")
                         .HasColumnName("status_id");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -231,12 +221,9 @@ namespace VirtualChat.Repository.Migrations
 
             modelBuilder.Entity("VirtualChat.Domain.Models.UserStatus", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
+                    b.Property<string>("Id")
+                        .HasColumnType("NVARCHAR(36)")
                         .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
                         .IsRequired()

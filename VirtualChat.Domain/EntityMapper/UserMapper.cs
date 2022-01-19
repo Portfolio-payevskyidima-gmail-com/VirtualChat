@@ -41,13 +41,13 @@ public class UserMapper : IEntityTypeConfiguration<User>
         builder.Property(x => x.Id)
             .ValueGeneratedOnAdd()
             .HasColumnName("id")
-            .HasColumnType("INT")
+            .HasColumnType("NVARCHAR(36)")
             .IsRequired();
 
         builder.Property(x => x.StatusId)
             .HasColumnName(@"status_id")
-            .HasColumnType("INT")
-            .IsRequired(false);
+            .HasColumnType("NVARCHAR(36)")
+            .IsRequired();
 
         builder.Property(x => x.Username)
             .HasColumnName(@"username")

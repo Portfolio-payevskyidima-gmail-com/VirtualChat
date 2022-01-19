@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VirtualChat.Repository.Migrations
 {
-    public partial class migration_1 : Migration
+    public partial class stringpk1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,8 +13,7 @@ namespace VirtualChat.Repository.Migrations
                 name: "ContactStatus",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "INT", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    id = table.Column<string>(type: "NVARCHAR", nullable: false),
                     Name = table.Column<string>(type: "NVARCHAR(10)", nullable: false)
                 },
                 constraints: table =>
@@ -26,8 +25,7 @@ namespace VirtualChat.Repository.Migrations
                 name: "Message",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "INT", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    id = table.Column<string>(type: "NVARCHAR", nullable: false),
                     text = table.Column<string>(type: "NTEXT", nullable: false),
                     create_date = table.Column<DateTime>(type: "DATETIME", nullable: false)
                 },
@@ -40,8 +38,7 @@ namespace VirtualChat.Repository.Migrations
                 name: "UserStatus",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "INT", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    id = table.Column<string>(type: "NVARCHAR(36)", nullable: false),
                     name = table.Column<string>(type: "NVARCHAR(10)", nullable: false)
                 },
                 constraints: table =>
@@ -53,8 +50,7 @@ namespace VirtualChat.Repository.Migrations
                 name: "User",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "INT", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    id = table.Column<string>(type: "NVARCHAR", nullable: false),
                     username = table.Column<string>(type: "NVARCHAR(16)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     name = table.Column<string>(type: "NVARCHAR(16)", nullable: false),
@@ -65,7 +61,7 @@ namespace VirtualChat.Repository.Migrations
                     birth_date = table.Column<DateTime>(type: "DATETIME", nullable: false),
                     email = table.Column<string>(type: "NVARCHAR(32)", nullable: false),
                     phone_number = table.Column<string>(type: "NVARCHAR(12)", nullable: false),
-                    status_id = table.Column<int>(type: "INT", nullable: true)
+                    status_id = table.Column<string>(type: "NVARCHAR(36)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -82,12 +78,11 @@ namespace VirtualChat.Repository.Migrations
                 name: "Chat",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "INT", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    id = table.Column<string>(type: "NVARCHAR", nullable: false),
                     name = table.Column<string>(type: "NVARCHAR(32)", nullable: false),
                     created_date = table.Column<DateTime>(type: "DATETIME", nullable: false),
-                    UserId = table.Column<int>(type: "INT", nullable: false),
-                    CompanionUserId = table.Column<int>(type: "INT", nullable: false)
+                    UserId = table.Column<string>(type: "NVARCHAR", nullable: false),
+                    CompanionUserId = table.Column<string>(type: "NVARCHAR", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -109,12 +104,11 @@ namespace VirtualChat.Repository.Migrations
                 name: "Contact",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "INT", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    id = table.Column<string>(type: "NVARCHAR", nullable: false),
                     contact_name = table.Column<string>(type: "NVARCHAR(32)", nullable: false),
-                    StatusId = table.Column<int>(type: "INT", nullable: false),
-                    UserId = table.Column<int>(type: "INT", nullable: false),
-                    ContactUserId = table.Column<int>(type: "INT", nullable: false)
+                    StatusId = table.Column<string>(type: "NVARCHAR", nullable: false),
+                    UserId = table.Column<string>(type: "NVARCHAR", nullable: false),
+                    ContactUserId = table.Column<string>(type: "NVARCHAR", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -142,10 +136,9 @@ namespace VirtualChat.Repository.Migrations
                 name: "ChatMessage",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "INT", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ChatId = table.Column<int>(type: "INT", nullable: false),
-                    MessageId = table.Column<int>(type: "INT", nullable: false)
+                    id = table.Column<string>(type: "NVARCHAR", nullable: false),
+                    ChatId = table.Column<string>(type: "NVARCHAR", nullable: false),
+                    MessageId = table.Column<string>(type: "NVARCHAR", nullable: false)
                 },
                 constraints: table =>
                 {

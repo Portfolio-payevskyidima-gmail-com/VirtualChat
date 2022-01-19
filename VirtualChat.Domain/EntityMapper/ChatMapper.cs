@@ -24,8 +24,18 @@ public class ChatMapper : IEntityTypeConfiguration<Chat>
         // Properies
         builder.Property(x => x.Id)
             .HasColumnName(@"id")
-            .HasColumnType("INT")
+            .HasColumnType("NVARCHAR(36)")
             .IsRequired();
+
+        builder.Property(x => x.UserId)
+            .HasColumnName(@"user_id")
+            .HasColumnType("NVARCHAR(36)")
+            .IsRequired(false);
+
+        builder.Property(x => x.CompanionUserId)
+            .HasColumnName(@"companionuser_id")
+            .HasColumnType("NVARCHAR(36)")
+            .IsRequired(false);
 
         builder.Property(x => x.Name)
             .HasColumnName(@"name")

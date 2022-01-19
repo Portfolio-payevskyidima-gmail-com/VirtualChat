@@ -23,7 +23,7 @@ public class ContactStatusMapper : IEntityTypeConfiguration<ContactStatus>
         // Properties
         builder.Property(x => x.Id)
             .HasColumnName(@"id")
-            .HasColumnType("INT")
+            .HasColumnType("NVARCHAR(36)")
             .IsRequired();
 
         builder.Property(x => x.Name)

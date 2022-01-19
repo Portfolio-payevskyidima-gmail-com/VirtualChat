@@ -20,8 +20,23 @@ public class ContactMapper : IEntityTypeConfiguration<Contact>
         // Properties
         builder.Property(x => x.Id)
             .HasColumnName(@"id")
-            .HasColumnType("INT")
+            .HasColumnType("NVARCHAR(36)")
             .IsRequired();
+
+        builder.Property(x => x.StatusId)
+            .HasColumnName(@"status_id")
+            .HasColumnType("NVARCHAR(36)")
+            .IsRequired();
+
+        builder.Property(x => x.UserId)
+            .HasColumnName(@"user_id")
+            .HasColumnType("NVARCHAR(36)")
+            .IsRequired(false);
+
+        builder.Property(x => x.ContactUserId)
+            .HasColumnName(@"contactuser_id")
+            .HasColumnType("NVARCHAR(36)")
+            .IsRequired(false);
 
         builder.Property(x => x.ContactName)
             .HasColumnName(@"contact_name")

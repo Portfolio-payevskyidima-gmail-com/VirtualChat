@@ -5,5 +5,5 @@
 /// </summary>
 public class UserStatusDTO : BaseUserStatusDTO
 {
-    public int Id { get; set; }
+    public string Id { get; set; }
 }

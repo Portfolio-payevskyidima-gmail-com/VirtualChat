@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VirtualChat.Repository;
 
@@ -11,9 +12,10 @@ using VirtualChat.Repository;
 namespace VirtualChat.Repository.Migrations
 {
     [DbContext(typeof(VirtalChatDbContext))]
-    partial class VirtalChatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220119152225_string-pk2")]
+    partial class stringpk2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

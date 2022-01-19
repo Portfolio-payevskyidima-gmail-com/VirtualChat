@@ -35,10 +35,7 @@ public class Repository<T> : IRepository<T> where T : class
     /// </summary>
     /// <param name="id">Id of T</param>
     /// <returns>T entity</returns>
-    public T Get(int id)
-    {
-        return _dbSet.Find(id);
-    }
+    public T Get(string id) => _dbSet.Find(id);
 
     /// <summary>
     /// Get all T entities
@@ -54,7 +51,7 @@ public class Repository<T> : IRepository<T> where T : class
     /// </summary>
     /// <param name="id">id of T</param>
     /// <exception cref="ArgumentNullException">Entity with current id does not exist</exception>
-    public void Delete(int id)
+    public void Delete(string id)
     {
         T item = Get(id);
         if (item == null)
@@ -108,6 +105,6 @@ public class Repository<T> : IRepository<T> where T : class
     public void SaveChanges()
     {
         _context.SaveChanges();
-    }    
+    }
     #endregion
 }

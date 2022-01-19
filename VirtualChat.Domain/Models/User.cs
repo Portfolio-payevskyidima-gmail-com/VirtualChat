@@ -1,4 +1,6 @@
-﻿namespace VirtualChat.Domain.Models;
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace VirtualChat.Domain.Models;
 
 /// <summary>
 /// User
@@ -6,7 +8,8 @@
 public class User
 {
     // Main properties
-    public int Id { get; set; }
+    // Identity 
+    public string Id { get; set; }
     public string Username { get; set; }
     public string Password { get; set; }
     public string Name { get; set; }
@@ -19,7 +22,7 @@ public class User
     public string PhoneNumber { get; set; }
 
     // Foreign key references
-    public int? StatusId { get; set; }
+    public string StatusId { get; set; }
     public UserStatus Status { get; set; }
 
     // Many-Collections for Foreign keys
